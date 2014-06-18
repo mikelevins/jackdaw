@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="fabric" default="jar">
+
+  <path id="library.class.path">
+    <pathelement location="./lib/kawa-1.14.jar"/>
+    <pathelement location="./src"/>
+    <pathelement location="."/>
+  </path>
+
+
+  <!--jar -->
+  <target name="jar" depends="compile-main">
+    <jar destfile="jackdaw.jar"
+         basedir="./src"
+         includes="**/*.class"
+         manifest="MANIFEST.txt">
+      <zipfileset src="./lib/kawa-1.14.jar"/>
+    </jar>
+  </target>
+
+  <!--compile main -->
+  <target name="compile-main">
+    <java taskname="kawa"
+          classname="kawa.repl"
+          failOnError="true"
+          dir="./src"
+          fork="true">
+      <classpath refid="library.class.path"/>
+      <arg line="-C 'jackdaw.scm'"/>
+    </java>
+  </target>
+
+  <target name="run" depends="compile-main">
+    <java taskname="jackdaw" classname="jackdaw" classpath="${library.class.path}" fork="true"/>
+  </target>
+
+  <!-- clean -->
+  <target name="clean"
+          description="Clean binary files">
+    <delete verbose="true">
+      <fileset dir="." includes="**/*.class"/>
+      <fileset dir="." includes="jackdaw.jar"/>
+    </delete>
+  </target>
+
+
+</project>
+
