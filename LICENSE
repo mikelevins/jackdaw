@@ -1,0 +1,21 @@
+Jackdaw is copyright 2014 by mikel evins and is distributed under the
+Apache License, Version 2.0, a copy of which can be found here:
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Kawa, the Scheme system distributed with Jackdaw is copyright
+1996-2009 by Per Bothner, and is distributed under the X11/MIT
+license, which can be found here:
+
+  http://www.gnu.org/software/kawa/Software-License.html
+
+Kawa can sources and prebuilt binaries can be obtained from the Kawa
+website, which is here:
+
+  http://www.gnu.org/software/kawa/Software-License.html
+
+Quack, the Emacs major mode for editing and running Scheme code, is
+copyright 2002-2012 by Neil Van Dyke, and is distributed under the Gnu
+Public License, as per the copyright notice in the copy of Quack that
+is distributed with Jackdaw.
+
